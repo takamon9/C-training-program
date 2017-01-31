@@ -142,8 +142,8 @@ namespace listbox {
 
 			int count = 1;
 			Excel::Application^ xls = gcnew Excel::ApplicationClass();
+			xls->Visible = false;
 			Workbook^ wbook = xls->Workbooks->Add(Type::Missing);
-			xls->Visible = true;
 			Worksheet^ wSheet = static_cast<Worksheet^>(xls->ActiveSheet);
 			wSheet->Name = "Active Sheet 1";
 
@@ -207,11 +207,10 @@ namespace listbox {
 
 		private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
 			Excel::Application^ xls = gcnew Excel::ApplicationClass();
+			xls->Visible = false;
 			Workbook^ wbook = xls->Workbooks->Add(Type::Missing);
-			xls->Visible = true;
 			Worksheet^ wSheet = static_cast<Worksheet^>(xls->ActiveSheet);
 			wSheet->Name = "Active Sheet 1";
-			wSheet->Cells[1, 2] = "abc";// Cells[row,col]
 		}
 
 		 private: bool putDataExels(Worksheet^ wsName,String^ nameOfArray1,String^ nameOfArray2, String^ nameOfArray3,int rows) {
