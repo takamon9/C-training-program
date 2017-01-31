@@ -175,9 +175,10 @@ namespace listbox {
 
 			wbook->Close(false, Type::Missing, Type::Missing);
 			xls->Quit();
-			wbook->Application->DisplayAlerts = true;
 
 			this->button1->Enabled = true;
+
+			wbook->Application->DisplayAlerts = true;
 
 		}
 		catch (Exception^ ex) {
